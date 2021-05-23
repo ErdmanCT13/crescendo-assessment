@@ -1,0 +1,105 @@
+/* font-family: 'Lobster', cursive;
+font-family: 'Roboto', sans-serif; */
+
+.recipe{
+    height: 500px;
+    width: calc((100% / 3) - 20px);
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
+    background-blend-mode: darken;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+}
+.recipe::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    -webkit-mask: url("../../images/source_icons_one-finger-select-hand-gesture.svg") no-repeat center;
+    mask: url("../../images/source_icons_one-finger-select-hand-gesture.svg") no-repeat center;
+    mask-size: 50px 50px;
+    -webkit-mask-size: 50px 50px;
+    background: white;
+    display: none;
+}
+.recipe:hover::before{
+    display: block;
+}
+.recipe__background{
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    filter: brightness(50%);
+}
+.recipe:hover .recipe__background{
+    filter: brightness(85%);
+}
+.recipe__content{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+}
+.recipe__header{
+    font-family: 'Lobster', cursive;
+    height: fit-content;
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.recipe__edit-date{
+    font-size: 14px;
+}
+.recipe__footer{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-evenly;
+    background: hsla(0, 0%, 0%, 40%);
+    transition: all .2s ease-in-out;
+}
+.recipe:hover .recipe__footer{
+    transform: translateY(120px);
+}
+.recipe__footer > div{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.recipe__footer > div > div{
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .recipe{
+        width: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .recipe{
+        width: calc(100% - 20px);
+    }
+}
