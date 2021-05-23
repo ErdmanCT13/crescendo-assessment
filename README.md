@@ -1,3 +1,5 @@
+# Please run the API off of port 3001. This is hardcoded into the source so using any other port will break the app. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
